@@ -1,9 +1,10 @@
-import React from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar, View } from 'react-native';
 import ListItem from '../components/ListItem';
 import Constants from 'expo-constants';
 import Screen from '../components/Screen';
 import ListItemSeparator from '../components/ListItemSeparator';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
 
 const initialMessages = [
     {
@@ -21,23 +22,34 @@ const initialMessages = [
   ];
 
 function MessagesScreen(props) {
-    return (
-      <Screen>
-        <FlatList
-            data={initialMessages} 
-            keyExtractor={message => message.id.toString()}
-            renderItem={({ item }) => (
-                <ListItem 
-                    title={item.title}
-                    subTitle={item.description}
-                    image={item.image} 
-                />
-            )}
-            ItemSeparatorComponent={ListItemSeparator}
-        />
-      </Screen>
-        
-    );
+  const [messages, setMessages] = useState(initialMessages);
+
+  const handleDelete = message => {
+    // delete message from messages
+    // call server to delete from backend
+    setMessages(messages.filter(m => m.id !== message.id));
+  }
+
+  return (
+    <Screen>
+      <FlatList
+          data={messages} 
+          keyExtractor={message => message.id.toString()}
+          renderItem={({ item }) => (
+              <ListItem 
+                  title={item.title}
+                  subTitle={item.description}
+                  image={item.image} 
+                  onPress={() => console.log("message selected", item)}
+                  renderRightActions={() => 
+                    <ListItemDeleteAction onPress={() => handleDelete(item)} />}
+              />
+          )}
+          ItemSeparatorComponent={ListItemSeparator}
+      />
+    </Screen>
+      
+  );
 }
 
 const styles = StyleSheet.create({
