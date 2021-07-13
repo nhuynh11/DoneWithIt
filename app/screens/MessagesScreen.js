@@ -9,14 +9,14 @@ import ListItemDeleteAction from '../components/ListItemDeleteAction';
 const initialMessages = [
     {
       id: 1,
-      title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec dignissim urna, quis fermentum felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nunc dictum, pellentesque libero sit amet, fringilla orci. Duis convallis velit vitae nisl vestibulum efficitur. Sed et risus velit. Nullam sit amet nunc lectus. Sed quis lectus nec lacus porta tristique eget quis arcu. Nam porttitor ut libero eget vestibulum. Etiam a orci dictum, consectetur neque non, semper lorem. Donec quis tincidunt mauris. Nunc sit amet scelerisque felis. In nec erat vitae sem lacinia finibus.",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec dignissim urna, quis fermentum felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nunc dictum, pellentesque libero sit amet, fringilla orci. Duis convallis velit vitae nisl vestibulum efficitur. Sed et risus velit. Nullam sit amet nunc lectus. Sed quis lectus nec lacus porta tristique eget quis arcu. Nam porttitor ut libero eget vestibulum. Etiam a orci dictum, consectetur neque non, semper lorem. Donec quis tincidunt mauris. Nunc sit amet scelerisque felis. In nec erat vitae sem lacinia finibus.",
+      title: "Jacket",
+      description: "Hi, is this still available?",
       image: require("../assets/nick.jpg"),
     },
     {
       id: 2,
-      title: "T2",
-      description: "D2",
+      title: "Camera",
+      description: "Hey, is this a mirrorless camera?",
       image: require("../assets/nick.jpg"),
     },
   ];
