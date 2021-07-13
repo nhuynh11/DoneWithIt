@@ -1,9 +1,9 @@
 import React from "react";
-import { View, StyleSheet, Image, TouchableOpacity, TouchableHighlight } from "react-native";
-import AppText from "./AppText";
+import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
+import AppText from "../AppText";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 function ListItem({ 
