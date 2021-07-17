@@ -13,9 +13,9 @@ import AppNavigator from "./app/navigation/AppNavigator";
 const Link = () => {
   const navigation = useNavigation();
   return (
-    <Button 
+    <Button
       title="Click"
-      onPress={() => navigation.navigate('TweetDetails', {id: 1})}
+      onPress={() => navigation.navigate('TweetDetails', { id: 1 })}
     />
   )
 }
@@ -24,7 +24,7 @@ const Tweets = ({ navigation }) => (
   <Screen>
     <Text>Tweets</Text>
     <Button title="View Tweet"
-    onPress={() => navigation.navigate("TweetDetails", {id: 1})} />
+      onPress={() => navigation.navigate("TweetDetails", { id: 1 })} />
     <Link />
   </Screen>
 )
@@ -38,21 +38,21 @@ const TweetDetails = ({ route }) => (
 const Stack = createStackNavigator();
 const StackNavigator = () => (
   <Stack.Navigator screenOptions={{
-    headerStyle: { backgroundColor: "green"},
+    headerStyle: { backgroundColor: "green" },
     headerTintColor: "white",
   }} >
-    <Stack.Screen 
-      name="Tweets" 
-      component={Tweets} 
+    <Stack.Screen
+      name="Tweets"
+      component={Tweets}
       options={{
-        headerStyle: { backgroundColor: "pink"},
+        headerStyle: { backgroundColor: "pink" },
         headerTintColor: "white",
         headerShown: true,
       }} />
-    <Stack.Screen 
-      name="TweetDetails" 
-      component={TweetDetails} 
-      options={({route}) => ({ title: route.params.id })} />
+    <Stack.Screen
+      name="TweetDetails"
+      component={TweetDetails}
+      options={({ route }) => ({ title: route.params.id })} />
   </Stack.Navigator>
 )
 
@@ -68,13 +68,13 @@ const TabNavigator = () => (
       inactiveTintColor: "black",
     }}
   >
-    <Tab.Screen 
-      name = "Feed" 
+    <Tab.Screen
+      name="Feed"
       component={StackNavigator}
       options={{
-        tabBarIcon: ({size, color}) => <MaterialCommunityIcons name="home" size={size} color={color} />
+        tabBarIcon: ({ size, color }) => <MaterialCommunityIcons name="home" size={size} color={color} />
       }} />
-    <Tab.Screen name = "Account" component={Account} />
+    <Tab.Screen name="Account" component={Account} />
   </Tab.Navigator>
 )
 
