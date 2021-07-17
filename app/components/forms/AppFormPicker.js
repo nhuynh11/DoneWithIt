@@ -15,7 +15,7 @@ function AppFormPicker({ items, name, placeholder, width, PickerItemComponent, n
         placeholder={placeholder}
         selectedItem={values[name]}
         width={width}
-        PickerItemComponent = {PickerItemComponent}
+        PickerItemComponent={PickerItemComponent}
         numberOfColumns={numberOfColumns}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
