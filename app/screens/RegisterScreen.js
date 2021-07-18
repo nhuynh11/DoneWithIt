@@ -13,6 +13,7 @@ import {
   ErrorMessage
 } from "../components/forms";
 import useApi from "../hooks/useApi";
+import ActivityIndicator from "../components/ActivityIndicator";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required().label("Name"),
@@ -47,6 +48,7 @@ function RegisterScreen() {
 
   return (
     <Screen style={styles.container}>
+      <ActivityIndicator visible={registerApi.loading || loginApi.loading} />
       <Form
         initialValues={{ name: "", email: "", password: "" }}
         onSubmit={handleSubmit}
