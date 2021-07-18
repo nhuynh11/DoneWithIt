@@ -16,7 +16,6 @@ const getToken = async () => {
     return authToken;
   } catch (error) {
     console.log("Error getting the auth token", error);
-    return null;
   }
 };
 
